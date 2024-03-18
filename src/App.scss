@@ -1,30 +1,37 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+$primary-background-color: #eee;
+$primary-navbar-color: #fff;
+$primary-font-color: #030829;
+$primary-hover-color: green;
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Wix Madefor Text', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .App {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #f1f1f1;
+    background-color: $primary-background-color;
 
     .navbar-container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        background-color: #fff;
+        background-color: $primary-navbar-color;
         padding: 25px 50px;
         box-shadow: 1px 1px 1px #eeeeee;
 
         p {
-            font-size: 20px;
+            font-size: 1.7rem;
             font-weight: bold;
             letter-spacing: -.5px;
         }
@@ -36,7 +43,7 @@
             list-style: none;
             li {
                 font-size: 18px;
-                font-weight: bold;
+                font-weight: 600;
                 margin-left: 20px;
                 margin-right: 0px;
                 a {
@@ -48,7 +55,7 @@
 
             li:hover {
                 a {
-                    color: red;
+                    color: $primary-hover-color;
                 }
             }
         }
@@ -62,30 +69,71 @@
         margin-top: 100px;
         padding: 0 20%;
 
+        @media (max-width: 991px) {
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+        }
         .about {
-            padding: 0 30px;
-            margin-right: 100px;
+            width: 50%;
+
+            @media (max-width: 991px) {
+                width: 100%;
+            }
         }
         .head-paragraph {
-            font-size: 40px;
+            font-size: 3.5rem;
             font-weight: bold;
             color: #030829;
+
+            @media (max-width: 991px) {
+                text-align: center;
+            }
         }
 
         .aboutme-paragraph {
-            font-size: 16px;
-            color: #030829;
+            font-size: 1.2rem;
+            color: $primary-font-color;
             font-weight: light;
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
+
+            @media (max-width: 991px) {
+                text-align: center;
+            }
+            
         }
 
         .avatar {
             width: 300px;
-            height: 300px;
-            background-color: yellow;
-            border-radius: 100%;
+            border-radius: 30px;
+            img {
+                width: 100%;
+                border-radius: 15px;
+            }
+        }
+
+        .icons-container {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            
+            @media (max-width: 991px) {
+                justify-content: center;
+            }
+            
+            .item {
+                margin-right: .5rem;
+                color: $primary-font-color;
+                transition: all 0.15s ease-in-out;
+            }
+
+            .item:hover {
+                color: $primary-hover-color;
+                cursor: pointer;
+            }
         }
     }
 }
