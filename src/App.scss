@@ -26,17 +26,42 @@ $primary-hover-color: green;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         background-color: $primary-navbar-color;
         padding: 25px 50px;
         box-shadow: 1px 1px 1px #eeeeee;
+
+        h1 {
+            color: $primary-font-color;
+        }
 
         p {
             font-size: 1.7rem;
             font-weight: bold;
             letter-spacing: -.5px;
         }
+
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            transition: all .15s ease-in-out;
+            @media (max-width: 991px) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .hamburger:hover {
+            cursor: pointer;
+            color: $primary-hover-color;
+        }
+        
         ul {
-            
+            @media (max-width: 991px) {
+                display: none;
+            }
+
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -47,7 +72,7 @@ $primary-hover-color: green;
                 margin-left: 20px;
                 margin-right: 0px;
                 a {
-                    color: black;
+                    color: $primary-font-color;
                     text-decoration: none;
                     transition: all 0.15s ease-in-out;
                 }
@@ -61,13 +86,71 @@ $primary-hover-color: green;
         }
     }
 
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 100px;
+        padding: 0 20%;
+
+        @media (max-width: 991px) {
+            align-items: center;
+
+        }
+    }
+
+    .technology {
+        
+        
+        h1 {
+            color: $primary-font-color;
+        }
+        @media (max-width: 991px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .items {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 1rem;
+
+            @media (max-width: 991px) {
+                flex-direction: column;
+            }
+
+            .item {
+                margin-right: 1rem;
+                color: $primary-font-color;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .item-group {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin-right: 2rem;
+
+                @media (max-width: 991px) {
+                    margin-right: 0;
+                    margin-top: 1.3rem;
+                }
+            }
+        }
+    }
     .container {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        margin-top: 100px;
-        padding: 0 20%;
 
         @media (max-width: 991px) {
             flex-direction: column-reverse;
@@ -115,7 +198,7 @@ $primary-hover-color: green;
         }
 
         .icons-container {
-            margin-top: 1rem;
+            margin-top: 1.3rem;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -135,5 +218,14 @@ $primary-hover-color: green;
                 cursor: pointer;
             }
         }
+    }
+
+    .projects {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+        padding: 0 20%;
     }
 }
