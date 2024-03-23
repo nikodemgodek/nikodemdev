@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
         <nav className="navbar-container">
-          <h1>Nikodem.dev</h1>
+          <h1 className="logo">Nikodem.dev</h1>
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#aboutme">About me</a></li>
@@ -79,12 +79,69 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="wrapper">
-          <div className="container">
-
+        <section id="section-aboutme">
+          <div className="about-flex">
+            <div className="container-picture">
+              <img src={require('./resources/workspace.jpg')} alt="Simple picturexd" />
+            </div>
+            <div className="container-about">
+              <span className="header">About me</span>
+              <h4 className="position">React Developer, Poland</h4>
+              <span className="text">Hey, my name is Nikodem Godek, and I'm a React Developer. My passion is to create and develop a clean UI/UX for my users.</span>
+              <span className="text">My main stack currently is React/Next.js in combination with Tailwind CSS and TypeScript.</span>
+            </div>
           </div>
-        </div>
-        
+        </section>
+
+        <section id="section-projects">
+          <h1>Portfolio</h1>
+          <div className="project-container">
+            <div className="project-image">
+              <img width="100%" height="100%" src={require('./resources/workspace.jpg')} alt="Simple picturexd" />
+            </div>
+            <div className="project-details">
+              <div className="project-header">
+                <h2>Weather & Forecast</h2>
+                <div className="group">
+                <p className="live">Live</p>
+                <p className="live">Code</p>
+                </div>
+                
+              </div>
+              <div className="project-description">
+                <span>The app allows users to subscribe their favorite twitch streamers, and watch streams that they have missed. User then can add their own channels and/or remove them. Mark videos as watched and bookmarked.</span>
+              </div>
+              <div className="project-technology-used">
+                <h3>NextJS</h3>
+                <h3>React</h3>
+                <h3>Redux</h3>
+              </div>
+            </div>
+          </div>
+          <div className="project-container">
+            <div className="project-image">
+              <img width="100%" height="100%" src={require('./resources/workspace.jpg')} alt="Simple picturexd" />
+            </div>
+            <div className="project-details">
+              <div className="project-header">
+                <h2>Weather & Forecast</h2>
+                <div className="group">
+                <p className="live">Live</p>
+                <p className="live">Code</p>
+                </div>
+                
+              </div>
+              <div className="project-description">
+                <span>The app allows users to subscribe their favorite twitch streamers, and watch streams that they have missed. User then can add their own channels and/or remove them. Mark videos as watched and bookmarked.</span>
+              </div>
+              <div className="project-technology-used">
+                <h3>React Native</h3>
+                <h3>React</h3>
+                <h3>Redux</h3>
+              </div>
+            </div>
+          </div>
+        </section>
     </div>
   );
 }
