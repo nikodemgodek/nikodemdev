@@ -15,6 +15,7 @@ $secondary-font-color: #818080;
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 .App {
@@ -24,6 +25,10 @@ $secondary-font-color: #818080;
     background-color: $primary-background-color;
 
     .navbar-container {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 80px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -137,6 +142,11 @@ $secondary-font-color: #818080;
                 justify-content: center;
             }
 
+            .item:hover {
+                scale: 1.25;
+                transition: all .25s ease;
+            }
+
             .item-group {
                 display: flex;
                 flex-direction: row;
@@ -198,10 +208,12 @@ $secondary-font-color: #818080;
 
         .avatar {
             width: 300px;
-            border-radius: 30px;
+            border-radius: 10px;
+            background-position: center;
+            background-size: cover;
             img {
                 width: 100%;
-                border-radius: 15px;
+                border-radius: 100%;
             }
         }
 

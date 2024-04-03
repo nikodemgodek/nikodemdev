@@ -15,21 +15,46 @@ import { SiNextdotjs } from "react-icons/si";
 import { FaSass } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
 
+import { useState, useEffect } from 'react';
+
 function App() {
+
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const controlHeaderVisibility = () => {
+
+    if(window.scrollY < lastScrollY) {
+      setShowHeader(true);
+    } else {
+      setShowHeader(false);
+    }
+
+    setLastScrollY(window.scrollY);
+  }
+
+  useEffect( () => {
+    window.addEventListener('scroll', controlHeaderVisibility);
+
+    return () => {
+      window.removeEventListener('scroll', controlHeaderVisibility);
+    }
+    
+  }, [lastScrollY] );
+
   return (
     <div className="App">
-        <nav className="navbar-container">
+        {showHeader && <nav id="navbar" className="navbar-container">
           <h1 className="logo">Nikodem.dev</h1>
           <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#aboutme">About me</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#section-aboutme">About me</a></li>
+            <li><a href="#section-projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
           <div className="hamburger">
             <RxHamburgerMenu />
           </div>
-        </nav>
+        </nav>}
         <div className="wrapper">
           <div className="container">
             <div className="about">
@@ -51,7 +76,7 @@ function App() {
             </div>
             <div className="avatar-container">
               <div className="avatar">
-                <img alt="Woman" src={require('./resources/woman.jpg')} />
+                <img width="100%" height="100%" alt="Woman" src={require('./resources/me.jpg')} />
               </div>
             </div>
           </div>

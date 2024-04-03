@@ -1,11 +1,15 @@
-document.getElementById('section-aboutme').addEventListener('scroll', function() {
-    var element = document.getElementById('section-aboutme');
-    var position = element.getBoundingClientRect();
+var lastScrollTop = 0;
+var navbar = document.getElementById("navbar");
+window.addEventListener("scroll", () => {
   
-    // Sprawdź, czy element jest widoczny
-    if(position.top < window.innerHeight && position.bottom >= 0) {
-      element.classList.remove('test');
-    } else {
-      element.classList.add('test');
-    }
-  });
+  var scrollTop = window.scrollY || document.documentElement.scrollTop;
+  if(scrollTop > lastScrollTop) {
+    navbar.style.top = "-80px";
+  } else {
+    navbar.style.top = "0";
+  }
+  lastScrollTop = scrollTop;
+
+})
+
+console.log("dupa");
