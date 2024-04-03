@@ -23,7 +23,7 @@ function App() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const controlHeaderVisibility = () => {
 
-    if(window.scrollY > lastScrollY) {
+    if(window.scrollY < lastScrollY) {
       setShowHeader(true);
     } else {
       setShowHeader(false);
